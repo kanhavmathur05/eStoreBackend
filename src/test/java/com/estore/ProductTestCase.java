@@ -39,7 +39,7 @@ public class ProductTestCase {
 		product.setQuantity(1);
 		product.setProductDescription("This is an HP Laptop");
 		product.setProductCategory("Laptop");
-		product.setImageName("laptop.jpg");
+		//product.setImageName("laptop.jpg");
 		result=productService.addProduct(product);
 		if(result)
 		{
@@ -92,7 +92,7 @@ public class ProductTestCase {
 		product.setProductCategory("Laptop");
 		product.setProductDescription("This is a MacBook Air");
 		product.setProductName("MacBook Air");
-		product.setImageName("appleMacBookAir.jpg");
+		//product.setImageName("appleMacBookAir.jpg");
 		product.setQuantity(1);
 		
 		result=productService.updateProduct(product);

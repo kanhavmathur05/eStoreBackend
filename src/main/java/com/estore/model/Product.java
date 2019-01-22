@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
@@ -20,14 +22,16 @@ public class Product implements Serializable{
 	private double price;
 	private int quantity;
 	private String productCategory;
-	private String imageName;
 	
-	public String getImageName() {
-		return imageName;
+	@Transient
+	private MultipartFile productImage;
+
+	public MultipartFile getProductImage() {
+		return productImage;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
 	}
 
 	public String getProductCategory() {
