@@ -12,29 +12,31 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Cart implements Serializable
 {
 	@Id
     @GeneratedValue
-    private int cartId;
+    private int cartID;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="cart",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private List<CartItem> cartItems;
 
     @OneToOne
-    @JoinColumn(name = "customerId")
-  //  @JsonIgnore
+    @JoinColumn(name="customerID")
+    @JsonIgnore
     private Customer customer;
 
     private double grandTotal;
 
-    public int getCartId() {
-        return cartId;
+    public int getCartID() {
+        return cartID;
     }
 
-    public void setCartId(int cartId) {
-        this.cartId = cartId;
+    public void setCartID(int cartID) {
+        this.cartID=cartID;
     }
 
     public List<CartItem> getCartItems() {
@@ -42,7 +44,7 @@ public class Cart implements Serializable
     }
 
     public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
+        this.cartItems=cartItems;
     }
 
     public Customer getCustomer() {
@@ -50,7 +52,7 @@ public class Cart implements Serializable
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customer=customer;
     }
 
     public double getGrandTotal() {
@@ -58,6 +60,6 @@ public class Cart implements Serializable
     }
 
     public void setGrandTotal(double grandTotal) {
-        this.grandTotal = grandTotal;
+        this.grandTotal=grandTotal;
     }
 }

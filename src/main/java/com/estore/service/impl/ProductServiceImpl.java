@@ -16,7 +16,6 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	ProductDAO productDAO;
 	
-	@Override
 	public List<Product> getAllProducts() {
 		List<Product> allProducts=productDAO.getAllProducts();
 		if(allProducts!=null)
@@ -29,7 +28,6 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 
-	@Override
 	public boolean addProduct(Product product) {
 		if(productDAO.addProduct(product))
 		{
@@ -41,7 +39,6 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 
-	@Override
 	public List<Product> getProdyctByName(String productName) {
 		List<Product> productList=productDAO.getProdyctByName(productName);
 		if(productList!=null){
@@ -52,9 +49,8 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 
-	@Override
-	public Product getProductById(int productID) {
-		Product product=productDAO.getProductById(productID);
+	public Product getProductByID(int productID) {
+		Product product=productDAO.getProductByID(productID);
 		if(product!=null) {
 			return product;
 		}
@@ -63,7 +59,6 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 
-	@Override
 	public boolean updateProduct(Product product) {
 		if(productDAO.updateProduct(product)) {
 			return true;
@@ -73,7 +68,6 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 
-	@Override
 	public boolean deleteProduct(Product product) {
 		if(productDAO.deleteProduct(product)) {
 			return true;
@@ -82,6 +76,4 @@ public class ProductServiceImpl implements ProductService{
 			return false;
 		}
 	}
-
-
 }

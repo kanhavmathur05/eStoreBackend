@@ -7,47 +7,51 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Customer implements Serializable{
+	
 	@Id
     @GeneratedValue
-    private int cutomerId;
+    private int customerID;
 	
-    //@NotEmpty(message = "The customer name must not be null")
+    @NotEmpty(message="The customer name must not be null")
     private String customerName;
 
-    //@NotEmpty (message = "The customer email must not be null")
+    @NotEmpty (message="The customer email must not be null")
     private String customerEmail;
     private String customerPhone;
 
-    //@NotEmpty (message = "The customer username must not be null")
-    private String username;
+    @NotEmpty (message="The customer username must not be null")
+    private String userName;
 
-    //@NotEmpty (message = "The customer password must not be null")
+    @NotEmpty (message="The customer password must not be null")
     private String password;
 
     private boolean enabled;
 
     @OneToOne
-    @JoinColumn(name = "billingAddressId")
+    @JoinColumn(name="billingAddressID")
     private BillingAddress billingAddress;
 
     @OneToOne
-    @JoinColumn(name = "shippingAddressId")
+    @JoinColumn(name="shippingAddressID")
     private ShippingAddress shippingAddress;
 
     @OneToOne
-    @JoinColumn(name = "cartId")
-    //@JsonIgnore
+    @JoinColumn(name="cartID")
+    @JsonIgnore
     private Cart cart;
 
-    public int getCutomerId() {
-        return cutomerId;
+    public int getCustomerID() {
+        return customerID;
     }
 
-    public void setCutomerId(int cutomerId) {
-        this.cutomerId = cutomerId;
+    public void setCustomerID(int customerID) {
+        this.customerID=customerID;
     }
 
     public String getCustomerName() {
@@ -55,7 +59,7 @@ public class Customer implements Serializable{
     }
 
     public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+        this.customerName=customerName;
     }
 
     public String getCustomerEmail() {
@@ -63,7 +67,7 @@ public class Customer implements Serializable{
     }
 
     public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
+        this.customerEmail=customerEmail;
     }
 
     public String getCustomerPhone() {
@@ -71,15 +75,15 @@ public class Customer implements Serializable{
     }
 
     public void setCustomerPhone(String customerPhone) {
-        this.customerPhone = customerPhone;
+        this.customerPhone=customerPhone;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName=userName;
     }
 
     public String getPassword() {
@@ -87,7 +91,7 @@ public class Customer implements Serializable{
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password=password;
     }
 
     public boolean isEnabled() {
@@ -95,7 +99,7 @@ public class Customer implements Serializable{
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        this.enabled=enabled;
     }
 
     public BillingAddress getBillingAddress() {
@@ -103,7 +107,7 @@ public class Customer implements Serializable{
     }
 
     public void setBillingAddress(BillingAddress billingAddress) {
-        this.billingAddress = billingAddress;
+        this.billingAddress=billingAddress;
     }
 
     public ShippingAddress getShippingAddress() {
@@ -111,7 +115,7 @@ public class Customer implements Serializable{
     }
 
     public void setShippingAddress(ShippingAddress shippingAddress) {
-        this.shippingAddress = shippingAddress;
+        this.shippingAddress=shippingAddress;
     }
 
     public Cart getCart() {
@@ -119,6 +123,6 @@ public class Customer implements Serializable{
     }
 
     public void setCart(Cart cart) {
-        this.cart = cart;
+        this.cart=cart;
     }
 }

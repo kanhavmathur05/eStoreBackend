@@ -67,7 +67,7 @@ public class ProductTestCase {
 	@Test
 	public void getProductByID()
 	{
-		product=productService.getProductById(3);
+		product=productService.getProductByID(3);
 		System.out.println("Product Name: "+product.getProductName()+"Product Price: "+product.getPrice());
 	}
 	

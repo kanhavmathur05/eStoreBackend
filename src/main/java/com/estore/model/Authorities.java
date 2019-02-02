@@ -9,8 +9,7 @@ import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
-@Entity
-@Component
+@Entity	
 public class Authorities implements Serializable
 {
 
@@ -25,19 +24,19 @@ public class Authorities implements Serializable
 		return authorityID;
 	}
 	public void setAuthorityID(int authorityID) {
-		this.authorityID = authorityID;
+		this.authorityID=authorityID;
 	}
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
-		this.role = role;
+		this.role=role;
 	}
 	public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.userName=userName;
 	}
 	
 }

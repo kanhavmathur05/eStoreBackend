@@ -8,7 +8,7 @@ public interface ProductService {
 	List<Product> getAllProducts();
 	boolean addProduct(Product product);
 	List<Product> getProdyctByName(String productName);
-	Product getProductById(int productID);
+	Product getProductByID(int productID);
 	boolean updateProduct(Product product);
 	boolean deleteProduct(Product product);
 }

@@ -12,7 +12,7 @@ public class ShippingAddress implements Serializable
 {
 	@Id
     @GeneratedValue
-    private int shippingAddressId;
+    private int shippingAddressID;
     private String streetName;
     private String apartmentNumber;
     private String city;
@@ -23,12 +23,12 @@ public class ShippingAddress implements Serializable
     @OneToOne
     private Customer customer;
 
-    public int getShippingAddressId() {
-        return shippingAddressId;
+    public int getShippingAddressID() {
+        return shippingAddressID;
     }
 
-    public void setShippingAddressId(int shippingAddressId) {
-        this.shippingAddressId = shippingAddressId;
+    public void setShippingAddressID(int shippingAddressID) {
+        this.shippingAddressID=shippingAddressID;
     }
 
     public String getStreetName() {
@@ -36,7 +36,7 @@ public class ShippingAddress implements Serializable
     }
 
     public void setStreetName(String streetName) {
-        this.streetName = streetName;
+        this.streetName=streetName;
     }
 
     public String getApartmentNumber() {
@@ -44,7 +44,7 @@ public class ShippingAddress implements Serializable
     }
 
     public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
+        this.apartmentNumber=apartmentNumber;
     }
 
     public String getCity() {
@@ -52,7 +52,7 @@ public class ShippingAddress implements Serializable
     }
 
     public void setCity(String city) {
-        this.city = city;
+        this.city=city;
     }
 
     public String getState() {
@@ -60,7 +60,7 @@ public class ShippingAddress implements Serializable
     }
 
     public void setState(String state) {
-        this.state = state;
+        this.state=state;
     }
 
     public String getCountry() {
@@ -68,7 +68,7 @@ public class ShippingAddress implements Serializable
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        this.country=country;
     }
 
     public String getZipCode() {
@@ -76,7 +76,7 @@ public class ShippingAddress implements Serializable
     }
 
     public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+        this.zipCode=zipCode;
     }
 
     public Customer getCustomer() {
@@ -84,18 +84,11 @@ public class ShippingAddress implements Serializable
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customer=customer;
     }
 
     @Override
     public String toString() {
-        return "ShippingAddress{" +
-                "streetName='" + streetName + '\'' +
-                ", apartmentNumber='" + apartmentNumber + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", country='" + country + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                '}';
+        return "ShippingAddress{" +"streetName='" + streetName + '\''+", apartmentNumber='" + apartmentNumber + '\'' +", city='" + city + '\'' +", state='" + state + '\'' +", country='" + country + '\'' +", zipCode='" + zipCode + '\'' +'}';
     }
 }

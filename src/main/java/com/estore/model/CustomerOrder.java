@@ -13,30 +13,30 @@ public class CustomerOrder implements Serializable
 {
 	@Id
     @GeneratedValue
-    private int customerOrderId;
+    private int customerOrderID;
 
     @OneToOne
-    @JoinColumn(name = "cartId")
+    @JoinColumn(name="cartID")
     private Cart cart;
 
     @OneToOne
-    @JoinColumn(name = "customerId")
+    @JoinColumn(name="customerID")
     private Customer customer;
 
     @OneToOne
-    @JoinColumn(name = "billingAddressId")
+    @JoinColumn(name="billingAddressID")
     private BillingAddress billingAddress;
 
     @OneToOne
-    @JoinColumn(name="shippingAddressId")
+    @JoinColumn(name="shippingAddressID")
     private ShippingAddress shippingAddress;
 
-    public int getCustomerOrderId() {
-        return customerOrderId;
+    public int getCustomerOrderID() {
+        return customerOrderID;
     }
 
-    public void setCustomerOrderId(int customerOrderId) {
-        this.customerOrderId = customerOrderId;
+    public void setCustomerOrderID(int customerOrderID) {
+        this.customerOrderID=customerOrderID;
     }
 
     public Cart getCart() {
@@ -44,7 +44,7 @@ public class CustomerOrder implements Serializable
     }
 
     public void setCart(Cart cart) {
-        this.cart = cart;
+        this.cart=cart;
     }
 
     public Customer getCustomer() {
@@ -52,7 +52,7 @@ public class CustomerOrder implements Serializable
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customer=customer;
     }
 
     public BillingAddress getBillingAddress() {
@@ -60,7 +60,7 @@ public class CustomerOrder implements Serializable
     }
 
     public void setBillingAddress(BillingAddress billingAddress) {
-        this.billingAddress = billingAddress;
+        this.billingAddress=billingAddress;
     }
 
     public ShippingAddress getShippingAddress() {
@@ -68,6 +68,6 @@ public class CustomerOrder implements Serializable
     }
 
     public void setShippingAddress(ShippingAddress shippingAddress) {
-        this.shippingAddress = shippingAddress;
+        this.shippingAddress=shippingAddress;
     }
 }

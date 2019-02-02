@@ -31,7 +31,7 @@ public class Product implements Serializable{
 	}
 
 	public void setProductImage(MultipartFile productImage) {
-		this.productImage = productImage;
+		this.productImage=productImage;
 	}
 
 	public String getProductCategory() {
@@ -39,7 +39,7 @@ public class Product implements Serializable{
 	}
 
 	public void setProductCategory(String productCategory) {
-		this.productCategory = productCategory;
+		this.productCategory=productCategory;
 	}
 
 	public Product() {
@@ -51,7 +51,7 @@ public class Product implements Serializable{
 	}
 
 	public void setProductID(int productID) {
-		this.productID = productID;
+		this.productID=productID;
 	}
 
 	public String getProductName() {
@@ -59,7 +59,7 @@ public class Product implements Serializable{
 	}
 
 	public void setProductName(String productName) {
-		this.productName = productName;
+		this.productName=productName;
 	}
 
 	public String getProductDescription() {
@@ -67,7 +67,7 @@ public class Product implements Serializable{
 	}
 
 	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
+		this.productDescription=productDescription;
 	}
 
 	public double getPrice() {
@@ -75,7 +75,7 @@ public class Product implements Serializable{
 	}
 
 	public void setPrice(double price) {
-		this.price = price;
+		this.price=price;
 	}
 
 	public int getQuantity() {
@@ -83,6 +83,6 @@ public class Product implements Serializable{
 	}
 
 	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+		this.quantity=quantity;
 	}
 }

@@ -21,7 +21,6 @@ public class ProductDAOImpl implements ProductDAO
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Override
 	public List<Product> getAllProducts() {
 		List<Product> allProducts=new ArrayList<>();
 		try
@@ -36,7 +35,6 @@ public class ProductDAOImpl implements ProductDAO
 		}
 	}
 
-	@Override
 	public boolean addProduct(Product product) {
 		try
 		{
@@ -50,11 +48,10 @@ public class ProductDAOImpl implements ProductDAO
 		}
 	}
 
-	@Override
 	public List<Product> getProdyctByName(String productName) {
 		List<Product> productList;
 		try {
-			Criteria cr = sessionFactory.getCurrentSession().createCriteria(Product.class);
+			Criteria cr=sessionFactory.getCurrentSession().createCriteria(Product.class);
 			cr.add(Restrictions.like("productName",""+productName+"%",MatchMode.ANYWHERE));
 			productList=cr.list();
 			return productList;
@@ -65,11 +62,10 @@ public class ProductDAOImpl implements ProductDAO
 		}
 	}
 
-	@Override
-	public Product getProductById(int productID){
+	public Product getProductByID(int productID){
 		Product product;
 		try {
-			Criteria cr = sessionFactory.getCurrentSession().createCriteria(Product.class);
+			Criteria cr=sessionFactory.getCurrentSession().createCriteria(Product.class);
 			cr.add(Restrictions.eq("productID",productID));
 			product=(Product) cr.uniqueResult();
 			return product;
@@ -80,7 +76,6 @@ public class ProductDAOImpl implements ProductDAO
 		}
 	}
 
-	@Override
 	public boolean updateProduct(Product product) {
 		try {
 			
@@ -94,7 +89,6 @@ public class ProductDAOImpl implements ProductDAO
 		}
 	}
 
-	@Override
 	public boolean deleteProduct(Product product) {
 		try {
 		sessionFactory.getCurrentSession().delete(product);

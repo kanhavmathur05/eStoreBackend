@@ -12,7 +12,7 @@ public class BillingAddress implements Serializable
 {
 	@Id
     @GeneratedValue
-    private int billingAddressId;
+    private int billingAddressID;
 
     private String streetName;
     private String apartmentNumber;
@@ -24,12 +24,12 @@ public class BillingAddress implements Serializable
     @OneToOne
     private Customer customer;
 
-    public int getBillingAddressId() {
-        return billingAddressId;
+    public int getBillingAddressID() {
+        return billingAddressID;
     }
 
-    public void setBillingAddressId(int billingAddressId) {
-        this.billingAddressId = billingAddressId;
+    public void setBillingAddressID(int billingAddressID) {
+        this.billingAddressID=billingAddressID;
     }
 
     public String getStreetName() {
@@ -37,7 +37,7 @@ public class BillingAddress implements Serializable
     }
 
     public void setStreetName(String streetName) {
-        this.streetName = streetName;
+        this.streetName=streetName;
     }
 
     public String getApartmentNumber() {
@@ -45,7 +45,7 @@ public class BillingAddress implements Serializable
     }
 
     public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
+        this.apartmentNumber=apartmentNumber;
     }
 
     public String getCity() {
@@ -53,7 +53,7 @@ public class BillingAddress implements Serializable
     }
 
     public void setCity(String city) {
-        this.city = city;
+        this.city=city;
     }
 
     public String getState() {
@@ -61,7 +61,7 @@ public class BillingAddress implements Serializable
     }
 
     public void setState(String state) {
-        this.state = state;
+        this.state=state;
     }
 
     public String getCountry() {
@@ -69,7 +69,7 @@ public class BillingAddress implements Serializable
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        this.country=country;
     }
 
     public String getZipCode() {
@@ -77,7 +77,7 @@ public class BillingAddress implements Serializable
     }
 
     public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+        this.zipCode=zipCode;
     }
 
     public Customer getCustomer() {
@@ -85,20 +85,13 @@ public class BillingAddress implements Serializable
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+        this.customer=customer;
     }
 
 
     @Override
     public String toString() {
-        return "BillingAddress{" +
-                "streetName='" + streetName + '\'' +
-                ", apartmentNumber='" + apartmentNumber + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", country='" + country + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                '}';
+        return "BillingAddress{"+"streetName='" + streetName + '\'' +", apartmentNumber='" + apartmentNumber + '\'' +", city='" + city + '\'' +", state='" + state + '\'' +", country='" + country + '\'' +", zipCode='" + zipCode + '\'' +'}';
     }
 
 }

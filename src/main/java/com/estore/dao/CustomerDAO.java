@@ -6,7 +6,8 @@ import com.estore.model.Customer;
 
 public interface CustomerDAO {
 	 void addCustomer(Customer customer);
-     Customer getCustomerById(int customerId);
+     Customer getCustomerByID(int customerID);
      List<Customer> getAllCustomers();
-     Customer getCustomerByUsername(String username);
+     Customer getCustomerByUserName(String userName);
+     Customer updateCustomer(Customer customer);
 }

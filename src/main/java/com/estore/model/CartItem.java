@@ -8,32 +8,34 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class CartItem implements Serializable
 {
 	 @Id
 	 @GeneratedValue
-	 private int cartItemId;
+	 private int cartItemID;
 
 	 @ManyToOne
-	 @JoinColumn(name = "cartId")
-	 //@JsonIgnore
+	 @JoinColumn(name="cartID")
+	 @JsonIgnore
 	 private Cart cart;
 
 	 @ManyToOne
-	 @JoinColumn(name = "productId")
+	 @JoinColumn(name="productID")
 	 private Product product;
 
 	 private int quantity;
 	 private double totalPrice;
 
 
-	 public int getCartItemId() {
-	     return cartItemId;
+	 public int getCartItemID() {
+	     return cartItemID;
 	 }
 
-	 public void setCartItemId(int cartItemId) {
-	     this.cartItemId = cartItemId;
+	 public void setCartItemID(int cartItemID) {
+	     this.cartItemID=cartItemID;
 	 }
 
 	 public Cart getCart() {
@@ -41,7 +43,7 @@ public class CartItem implements Serializable
 	 }
 	 
 	 public void setCart(Cart cart) {
-	        this.cart = cart;
+	        this.cart=cart;
 	 }
 
 	 public Product getProduct() {
@@ -49,7 +51,7 @@ public class CartItem implements Serializable
 	 }
 
 	 public void setProduct(Product product) {
-	     this.product = product;
+	     this.product=product;
 	 }
 
 	 public int getQuantity() {
@@ -57,7 +59,7 @@ public class CartItem implements Serializable
 	 }
 	 
 	 public void setQuantity(int quantity) {
-	     this.quantity = quantity;
+	     this.quantity=quantity;
 	 }
 
 	 public double getTotalPrice() {
@@ -65,6 +67,6 @@ public class CartItem implements Serializable
 	 }
 
 	 public void setTotalPrice(double totalPrice) {
-	     this.totalPrice = totalPrice;
+	     this.totalPrice=totalPrice;
 	 }
 }
